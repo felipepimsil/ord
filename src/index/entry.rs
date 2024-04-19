@@ -58,15 +58,15 @@ pub struct RuneEntry {
 
 impl RuneEntry {
   pub fn mintable(&self, height: u64) -> Result<u128, MintError> {
-    let Some(terms) = self.terms else {
-      return Err(MintError::Unmintable);
-    };
+    // let Some(terms) = self.terms else {
+    //   return Err(MintError::Unmintable);
+    // };
 
-    if let Some(start) = self.start() {
-      if height < start {
-        return Err(MintError::Start(start));
-      }
-    }
+    // if let Some(start) = self.start() {
+    //   if height < start {
+    //     return Err(MintError::Start(start));
+    //   }
+    // }
 
     if let Some(end) = self.end() {
       if height >= end {
